@@ -4,12 +4,15 @@ import { Span } from "../Span";
 
 export const AboutSection: React.FC = () => {
   return (
-    <Flex p={10} justifyContent="space-evenly" alignItems="center">
+    <Flex
+      p={10}
+      justifyContent="space-evenly"
+      alignItems="center"
+      direction={{ base: "column", md: "row" }}>
       <Image
         src="images/three.gif"
-        w={475}
-        h={300}
-        display={{ base: "none", md: "block" }}
+        w={{ base: "full", md: 475 }}
+        h={{ base: 200, md: 300 }}
         rounded={10}
       />
       <VStack p={4}>
