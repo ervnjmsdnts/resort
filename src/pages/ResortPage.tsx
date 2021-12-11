@@ -37,7 +37,7 @@ export const ResortPage: React.FC = () => {
               {resort.name}
             </Text>
             <Center w="full">
-              <SlideShow slides={resort.images} data={resort.images} />
+              <SlideShow slides={resort.images} />
             </Center>
           </VStack>
           <Box p={8} fontSize={{ base: "lg", md: "xl" }} bgColor="bg">

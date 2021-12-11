@@ -3,10 +3,7 @@ import { Box, Flex } from "@chakra-ui/layout";
 import { ScaleFade } from "@chakra-ui/transition";
 import { useState, useEffect } from "react";
 
-export const SlideShow: React.FC<{ slides: string[]; data: string[] }> = ({
-  slides,
-  data,
-}) => {
+export const SlideShow: React.FC<{ slides: string[] }> = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 

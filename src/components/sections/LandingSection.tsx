@@ -30,7 +30,7 @@ export const LandingSection: React.FC = () => {
           </Link>
         </Center>
       </VStack>
-      <SlideShow slides={sliderData} data={sliderData} />
+      <SlideShow slides={sliderData} />
     </Flex>
   );
 };
