@@ -1,13 +1,13 @@
 import { Layout } from "../components/Layout";
 import { useParams } from "react-router";
 import { Box, Heading, Text, VStack } from "@chakra-ui/layout";
-import { Image } from "@chakra-ui/image";
 import { resortData } from "../data/resortData";
-import { Flex } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
 import StarRating from "react-svg-star-rating";
 
 import { Span } from "../components/Span";
 import "../style.css";
+import { SlideShow } from "../components/SlideShow";
 
 export const ResortPage: React.FC = () => {
   const { municipality } = useParams();
@@ -36,23 +36,9 @@ export const ResortPage: React.FC = () => {
               textAlign={{ base: "center", md: "start" }}>
               {resort.name}
             </Text>
-            <Flex
-              w="full"
-              direction={{ base: "column", md: "row" }}
-              justifyContent="space-evenly"
-              alignItems="center">
-              {resort.images.map((image, index) => (
-                <Box mt={{ base: 4, md: 0 }} mx={{ md: 2 }}>
-                  <Image
-                    key={index}
-                    src={`images/${image}`}
-                    w={{ base: 275, md: 375 }}
-                    h={{ base: 225, md: 325 }}
-                    rounded={10}
-                  />
-                </Box>
-              ))}
-            </Flex>
+            <Center w="full">
+              <SlideShow slides={resort.images} data={resort.images} />
+            </Center>
           </VStack>
           <Box p={8} fontSize={{ base: "lg", md: "xl" }} bgColor="bg">
             <Text>
