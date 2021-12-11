@@ -52,7 +52,11 @@ export const ResortPage: React.FC = () => {
             {resort.fbPage && (
               <Text>
                 <Span fontWeight="semibold">Facebook Page:</Span>{" "}
-                <a href={resort.fbPage.link} target="_blank" rel="noreferrer">
+                <a
+                  className="resort-link"
+                  href={resort.fbPage.link}
+                  target="_blank"
+                  rel="noreferrer">
                   {resort.fbPage.name}
                 </a>
               </Text>

@@ -2,6 +2,6 @@
   display: flex;
 }
 
-a:hover {
+.resort-link:hover {
   text-decoration: underline;
 }
