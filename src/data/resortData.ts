@@ -3,6 +3,10 @@ interface IResort {
   images: string[];
   location: string;
   contact?: string;
+  fbPage?: {
+    name: string;
+    link: string;
+  };
   offers: string[];
   rating?: number;
 }
@@ -45,6 +49,10 @@ export const resortData: IResortData[] = [
         ],
         location: "Brgy. San Piro, Balayan, Batangas",
         contact: "(043) 407-0089",
+        fbPage: {
+          name: "Cimpulo Beach Resort",
+          link: "https://www.facebook.com/CimpuloBeachResort",
+        },
         offers: [
           "Events management",
           "Pool for kids & adults",
@@ -150,6 +158,10 @@ export const resortData: IResortData[] = [
         images: ["calaca/yabut1.jpg", "calaca/yabut4.jpg", "calaca/yabut5.jpg"],
         location: "Timoteo Marella St., Calaca, Batangas",
         contact: "yabutresort@gmail.com",
+        fbPage: {
+          name: "Yabut River Resort",
+          link: "https://www.facebook.com/YabutRiverResort",
+        },
         offers: [
           "Pool for kids & adults",
           "Event management",
@@ -169,6 +181,10 @@ export const resortData: IResortData[] = [
         ],
         location: "Poblacion 6, Calaca, Batangas",
         contact: "0956-336-9045",
+        fbPage: {
+          name: "Queen Teresita Resort and Waterpark",
+          link: "https://www.facebook.com/queenteresita",
+        },
         offers: [
           "Pool for kids & adults",
           "Event management",
@@ -195,6 +211,10 @@ export const resortData: IResortData[] = [
           "calaca/filipina3.jpg",
         ],
         location: "Calaca, Batangas",
+        fbPage: {
+          name: "Filipina Beach Resort Calaca Batangas",
+          link: "https://www.facebook.com/pages/Filipina-Beach-Resort-Calaca-Batangas/436124066404679",
+        },
         offers: [
           "Pool for kids & adults",
           "Room and Cottages",
@@ -216,6 +236,10 @@ export const resortData: IResortData[] = [
         ],
         location: "Brgy. Nonong Castro, Lemery, Batangas",
         contact: "villagarciabeach@gmail.com | 0917-508-5891 | 0915-378-3678",
+        fbPage: {
+          name: "Villa Garcia Beach Resort",
+          link: "https://www.facebook.com/villagraciabeachresort",
+        },
         offers: [
           "Pool for kids & adults",
           "Room accomodation",
@@ -245,6 +269,10 @@ export const resortData: IResortData[] = [
         images: ["lemery/lfb4.jpg", "lemery/lfb5.jpg"],
         location: "Lemery, Batangas",
         contact: "0955-722-8739",
+        fbPage: {
+          name: "La Familia Bay Beach Resort",
+          link: "https://www.facebook.com/LaFamiliaGate2/",
+        },
         offers: [
           "Pool for kids & adults",
           "Accomodation",
@@ -265,6 +293,10 @@ export const resortData: IResortData[] = [
         images: ["lemery/larea1.jpg", "lemery/larea3.jpg", "lemery/larea5.jpg"],
         location: "Brgy. Nonong Casto, Lemery, Batangas",
         contact: "0916-774-2788",
+        fbPage: {
+          name: "La Rea Beach Resort",
+          link: "https://www.facebook.com/La-Rea-Beach-Resort-2197123430511669",
+        },
         offers: [
           "Pool for kids & adults",
           "Room and Cottages for rent",
@@ -280,7 +312,31 @@ export const resortData: IResortData[] = [
         ],
         location: "Brgy. Nonong Casto, Lemery, Batangas",
         contact: "heartofdocean2005@gmail.com | 0917-528-3832",
+        fbPage: {
+          name: "Heart of D' Ocean Beach Resort",
+          link: "https://www.facebook.com/Heart-of-D-Ocean-Beach-Resort-233219370026088",
+        },
         offers: ["Pool for kids & adults", "Water park", "Accomodation"],
+        rating: 4.0,
+      },
+      {
+        name: "De La Rosa Beach Resort",
+        images: [
+          "lemery/delarosa1.jpg",
+          "lemery/delarosa2.jpg",
+          "lemery/delarosa3.jpg",
+        ],
+        fbPage: {
+          name: "Dela Rosa Beach Resort Lemery Batangas",
+          link: "https://www.facebook.com/pages/Dela%20Rosa%20Beach%20Resort%20Lemery%20Batangas/373207349464016/",
+        },
+        location: "Lemery, Batangas",
+        offers: [
+          "Pool for kids & adults",
+          "Room and cottages",
+          "Banana boat",
+          "Beach volleyball",
+        ],
         rating: 4.0,
       },
       {

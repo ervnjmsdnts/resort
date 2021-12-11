@@ -1,16 +1,16 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-} from "@chakra-ui/accordion";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Button, Collapse, Icon } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CloseIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons";
 import { Box, Flex, HStack, Link, Stack } from "@chakra-ui/layout";
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
+import { useEffect, useState } from "react";
 
 import { Logo } from "./Logo";
 
@@ -34,6 +34,17 @@ const NavLink: React.FC<INavLink & Record<string, any>> = ({
 
 export const NavBar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [show, setShow] = useState(false);
+
+  const onClick = () => setShow(!show);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setShow(false);
+  }, [pathname]);
+
   return (
     <Box
       as="nav"
@@ -94,31 +105,28 @@ export const NavBar: React.FC = () => {
             <NavLink to="/" pl={4}>
               Home
             </NavLink>
-            <Accordion defaultIndex={[0]} allowMultiple>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton>
-                    <Box flex="1" textAlign="left" fontWeight="semibold">
-                      Resorts
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} bgColor="bgTransparent" color="white">
-                  <Stack pl={4} spacing={4} fontWeight="semibold">
-                    <NavLink to="/Balayan" py={2}>
-                      Balayan
-                    </NavLink>
-                    <NavLink to="/Calaca" py={2}>
-                      Calaca
-                    </NavLink>
-                    <NavLink to="/Lemery" py={2}>
-                      Lemery
-                    </NavLink>
-                  </Stack>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
+            <Button w="full" justifyContent="space-between" onClick={onClick}>
+              Resort
+              <Icon as={show ? ChevronDownIcon : ChevronUpIcon} />
+            </Button>
+            <Collapse in={show} animateOpacity>
+              <Stack
+                p={4}
+                spacing={4}
+                fontWeight="semibold"
+                bgColor="bgTransparent"
+                color="white">
+                <NavLink to="/Balayan" py={2}>
+                  Balayan
+                </NavLink>
+                <NavLink to="/Calaca" py={2}>
+                  Calaca
+                </NavLink>
+                <NavLink to="/Lemery" py={2}>
+                  Lemery
+                </NavLink>
+              </Stack>
+            </Collapse>
           </Stack>
         </Box>
       ) : null}

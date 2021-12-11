@@ -4,9 +4,10 @@ import { Box, Heading, Text, VStack } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
 import { resortData } from "../data/resortData";
 import { Flex } from "@chakra-ui/react";
+import StarRating from "react-svg-star-rating";
+
 import { Span } from "../components/Span";
 import "../style.css";
-import StarRating from "react-svg-star-rating";
 
 export const ResortPage: React.FC = () => {
   const { municipality } = useParams();
@@ -60,6 +61,14 @@ export const ResortPage: React.FC = () => {
             {resort.contact && (
               <Text>
                 <Span fontWeight="semibold">Contact:</Span> {resort.contact}
+              </Text>
+            )}
+            {resort.fbPage && (
+              <Text>
+                <Span fontWeight="semibold">Facebook Page:</Span>{" "}
+                <a href={resort.fbPage.link} target="_blank" rel="noreferrer">
+                  {resort.fbPage.name}
+                </a>
               </Text>
             )}
             <Span fontWeight="semibold">Offers:</Span>
